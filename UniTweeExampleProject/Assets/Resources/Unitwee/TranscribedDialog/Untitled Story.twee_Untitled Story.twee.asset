@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d55c6e6d32b8e26409d51d88e2a33247, type: 3}
+  m_Name: Untitled Story.twee_Untitled Story.twee
+  m_EditorClassIdentifier: 
+  start: {fileID: 0}
+  nodes:
+  - {fileID: 11400000, guid: 859e2623ed6b9274bbf07db165eccac0, type: 2}
+  - {fileID: 11400000, guid: 3a1cb15188a90f5489c74e653e12b354, type: 2}
+  - {fileID: 11400000, guid: 80821aa8156fc8f479765d20e36ba15f, type: 2}
+  - {fileID: 11400000, guid: a59a59213f2a17f4f91a081b41fb738f, type: 2}
+  - {fileID: 11400000, guid: 99b8e08046b718241ae40eb4482247ce, type: 2}
+  - {fileID: 11400000, guid: 907734ec5095f5249832f0ff7deef410, type: 2}
