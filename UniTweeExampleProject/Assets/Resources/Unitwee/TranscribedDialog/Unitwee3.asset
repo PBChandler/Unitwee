@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a82f5ec2fb64d4ebf15a77dd408dd3, type: 3}
   m_Name: Unitwee3
   m_EditorClassIdentifier: 
-  DisplayName: Baseball
-  Contents: Hey there pal, what baseball team do you follow?
+  DisplayName: Node4
+  Contents: Node 4!
   Options: []
   extensions: []
-  stringOpts:
-  - '[[<The Heat Baby!>]]'
-  - '[[<I don''t really watch Baseball>]]'
-  - '[[UPGRADE The Upgrade Little League Team]]'
+  fileOptions: []
+  id: 0
+  idOptions: 
   filename: 
+  devName: Node4
+  owner: {fileID: 0}

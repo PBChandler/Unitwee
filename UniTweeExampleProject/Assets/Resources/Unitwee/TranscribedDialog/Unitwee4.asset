@@ -12,10 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a82f5ec2fb64d4ebf15a77dd408dd3, type: 3}
   m_Name: Unitwee4
   m_EditorClassIdentifier: 
-  DisplayName: I actually prefer Triple O!
-  Contents: 
+  DisplayName: Node5
+  Contents: Node 5!
   Options: []
   extensions: []
-  stringOpts:
-  - '[[<I don''t really watch Baseball>]] '
+  fileOptions: []
+  id: 0
+  idOptions: 
   filename: 
+  devName: Node5
+  owner: {fileID: 0}

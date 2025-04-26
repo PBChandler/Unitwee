@@ -12,9 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a82f5ec2fb64d4ebf15a77dd408dd3, type: 3}
   m_Name: Unitwee0
   m_EditorClassIdentifier: 
-  DisplayName: <Hell Yeah Tony B!>
-  Contents: Hell Yeah!
+  DisplayName: Node 1
+  Contents: Node 1 Node 1 Node 1 Node 1
   Options: []
   extensions: []
-  stringOpts: []
+  fileOptions:
+  - '[[Hello|Node 2]]'
+  - '[[Node 3]]'
+  - '[[Node4]]'
+  - '[[Node5]]'
+  id: 0
+  idOptions: 
   filename: 
+  devName: Node 1
+  owner: {fileID: 0}

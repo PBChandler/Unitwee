@@ -12,12 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a82f5ec2fb64d4ebf15a77dd408dd3, type: 3}
   m_Name: Unitwee2
   m_EditorClassIdentifier: 
-  DisplayName: <The Heat Baby!>
-  Contents: Ey! That's what I'm talking bout, seeing Tony B hit those four consecutive
-    homers is the stuff of legend!
+  DisplayName: Node 3
+  Contents: Node 3!
   Options: []
   extensions: []
-  stringOpts:
-  - '[[<Hell Yeah Tony B!>]] '
-  - '[[I actually prefer Triple O!]] '
+  fileOptions: []
+  id: 0
+  idOptions: 
   filename: 
+  devName: Node 3
+  owner: {fileID: 0}

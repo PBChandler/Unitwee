@@ -12,9 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a82f5ec2fb64d4ebf15a77dd408dd3, type: 3}
   m_Name: Unitwee1
   m_EditorClassIdentifier: 
-  DisplayName: <I don't really watch Baseball>
-  Contents: I'll Kill You.
+  DisplayName: Node 2
+  Contents: Node 2!
   Options: []
   extensions: []
-  stringOpts: []
+  fileOptions: []
+  id: 0
+  idOptions: 
   filename: 
+  devName: Node 2
+  owner: {fileID: 0}

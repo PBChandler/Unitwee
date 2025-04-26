@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d55c6e6d32b8e26409d51d88e2a33247, type: 3}
-  m_Name: Untitled Story.twee_Untitled Story.twee
+  m_Name: Unitwee Design Pattern.twee_Unitwee Design Pattern.twee
   m_EditorClassIdentifier: 
   start: {fileID: 0}
   nodes:
@@ -19,4 +19,3 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 80821aa8156fc8f479765d20e36ba15f, type: 2}
   - {fileID: 11400000, guid: a59a59213f2a17f4f91a081b41fb738f, type: 2}
   - {fileID: 11400000, guid: 99b8e08046b718241ae40eb4482247ce, type: 2}
-  - {fileID: 11400000, guid: 907734ec5095f5249832f0ff7deef410, type: 2}

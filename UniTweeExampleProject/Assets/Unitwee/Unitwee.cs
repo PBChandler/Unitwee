@@ -27,9 +27,9 @@ public class Unitwee
 
             DialogNode activeDialogNode = new DialogNode();
             List<DialogNode> dialogNodes = new List<DialogNode>();
-            List<Unitwee_DialogNode> assetDialogNodes = new List<Unitwee_DialogNode>();
             string buildingContents = "";
             List<string> buildingOptions = new List<string>();
+            List<int> buildingOptionsIDs = new List<int>();
             string buildingName = "";
             for (int i = 0; i < fileLines.Length; i++)
             {
@@ -48,7 +48,16 @@ public class Unitwee
                     if (buildingName != "")
                     {
                         Reset();
+                        activeDialogNode.idOptions = new List<int>();
                         activeDialogNode.Name = buildingName;
+                        if(line.Contains("|"))
+                        {
+                            activeDialogNode.DisplayName = line.Substring(0, line.IndexOf('|'));
+                        }
+                        else
+                        {
+                            activeDialogNode.DisplayName = activeDialogNode.Name;
+                        }
                         for(int j = i+1; j < fileLines.Length; j++)
                         {
                             if (fileLines[j].Contains("::"))
@@ -58,6 +67,7 @@ public class Unitwee
                             else if(fileLines[j].Contains("[["))
                             {
                                 buildingOptions.Add(fileLines[j]);
+                                buildingOptionsIDs.Add(j);
                             }
                             else
                             {
@@ -67,7 +77,8 @@ public class Unitwee
                         activeDialogNode.Contents = buildingContents;
                         activeDialogNode.Options = buildingOptions.ToArray();
                         dialogNodes.Add(activeDialogNode);
-                     
+                        activeDialogNode.idOptions = buildingOptionsIDs;
+                        activeDialogNode.id = i;
                         Reset();
                     }
                 }
@@ -97,7 +108,7 @@ public class Unitwee
             for (int i = 0; i < dialogNodes.Count; i++)
             {
                 Unitwee_DialogNode a = Resources.Load<Unitwee_DialogNode>("Unitwee/TranscribedDialog/Unitwee" + i);
-                coolDict.Add("Unitwee"+i, a);
+                coolDict.Add("Unitwee" + i, a);
                 a.filename = "Unitwee" + i;
                 sequence.nodes.Add(a);
             }
@@ -108,13 +119,34 @@ public class Unitwee
 
             foreach(Unitwee_DialogNode parent in sequence.nodes)
             {
-                for(int i = 0; i < dialogNodes.Count; i++)
+                parent.owner = sequence;
+                for (int i = 0; i < sequence.nodes.Count; i++)
                 {
-                    if (parent.stringOpts.Contains("[[" + coolDict["Unitwee" + i].DisplayName + "]]"))
+                    sequence.nodes[i].id = i;
+                }
+
+                for(int j = 0; j < parent.fileOptions.Length; j++)
+                {
+                    for (int i = 0; i < sequence.nodes.Count; i++)
                     {
-                        parent.Options.Add(coolDict["Unitwee" + i]);
+                        string h = parent.fileOptions[j];
+                        if (h.Contains(sequence.nodes[i].devName+"]]"))
+                        {
+                            LiveOption o = new LiveOption();
+                            if (h.Contains('|'))
+                            {
+                                h = h.Replace("[[", "");
+                                o.key = h.Substring(0, h.IndexOf('|'));
+                            }
+                               
+                            else
+                                o.key = coolDict["Unitwee" + i].DisplayName;
+                            o.value = coolDict["Unitwee" + i];
+                            parent.Options.Add(o);
+                        }
                     }
                 }
+                
             }
             AssetDatabase.SaveAssets();
             AssetDatabase.Refresh();
@@ -130,9 +162,13 @@ public class Unitwee
             {
                 Unitwee_DialogNode export = ScriptableObject.CreateInstance<Unitwee_DialogNode>();
                 export.name = import.Name;
-                export.DisplayName = import.Name;
-                export.stringOpts = import.Options;
+                export.devName = import.Name;
+                if (import.DisplayName.Contains('|'))
+                    export.DisplayName = import.DisplayName.Substring(0, import.DisplayName.IndexOf('|') - 1);
+                export.DisplayName = import.DisplayName;
+                export.fileOptions = import.Options;
                 export.Contents = import.Contents;
+                export.id = import.id;
                 return export;
             }
         }
@@ -150,6 +186,9 @@ public class Unitwee
         public string Name;
         public string Contents;
         public string[] Options;
+        public string DisplayName;
+        public int id;
+        public List<int> idOptions;
     }
     /// <summary>
     /// Converts a string into a line by line array based on it's use of '\n'
